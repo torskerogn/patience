@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-header {
+    @apply font-bold text-4xl;
+  }
+
+  .text-subheader {
+    @apply font-semibold text-2xl;
+  }
+
+  .text-body {
+    @apply font-normal text-base;
+  }
+
+  .text-caption {
+    @apply font-light text-sm;
+  }
+
+  .text-display {
+    @apply font-extrabold text-5xl;
+  }
+}
