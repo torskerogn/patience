@@ -2,6 +2,25 @@
 import '../styles/global.css';
 ---
 
-<div class="bg-red-500 h-20 w-[100px] bottom-0 fixed z-50">
-    <div>back</div>
+
+<!-- <div class="h-20 w-full bottom-0 fixed z-50 px-4 md:px-0">
+    <a href="/">
+    <img src="/icons/arrow-back.svg" alt="back" class="w-20" />
+    </a>
+    </div> -->
+    
+ <div class="bg-transparent fixed bottom-0 left-0 right-0 z-50 flex justify-between items-center px-4 md:px-80 h-20">
+    <a href="/">
+        <img src="/icons/arrow-back.svg" alt="back" class="w-20 dark:invert" />
+    </a>
+    
+    <label class="relative inline-block w-20 h-10 cursor-pointer">
+        <input type="checkbox" id="darkToggle" class="sr-only peer" />
+         <div class="w-20 h-10 border-2 border-dark dark:border-light rounded-full transition-colors duration-300"></div>
+        <div class="absolute top-1.5 left-1.5 w-7 h-7 bg-dark dark:bg-light rounded-full peer-checked:translate-x-10 transition-all duration-300"></div>
+    </label>
 </div>
+
+<script>
+    import '../scripts/darkmode.js';
+</script>

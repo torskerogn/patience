@@ -17,18 +17,45 @@ import Footer from '../components/Footer.astro'
     <title>patience</title>
   </head>
   <body class="px-0 md:px-80">
+
+        <Header />
+    <div class="h-screen overflow-y-scroll snap-y snap-mandatory">
+        <section class="h-screen snap-start"><Splash /></section>
+        <section class="h-screen snap-start"><ProjMap /></section>
+        <section class="h-screen snap-start"><P5 /></section>
+        <section class="h-screen snap-start"><City /></section>
+        <section class="h-screen snap-start"><Three /></section>
+    </div>
+    <Footer />
+
+    <!-- <div class="snap-start"><Header></Header></div>
+    <div class="snap-start"><Splash></Splash></div>
+    <Divider></Divider>
+    <div class="snap-start"><ProjMap></ProjMap></div>
+    <Divider></Divider>
+    <div class="snap-start"><P5></P5></div>
+    <Divider></Divider>
+    <div class="snap-start"><City></City></div>
+    <Divider></Divider>
+    <div class="snap-start"><Three></Three></div>
+
+    <Footer></Footer> -->
+
+    <!-- <Header></Header>
+    <Splash></Splash>
+    <Divider></Divider>
+    <ProjMap></ProjMap>
+    <Divider></Divider>
+    <P5></P5>
+    <Divider></Divider>
+    <City></City>
+    <Divider></Divider>
+    <Three></Three>
+    <Footer></Footer> -->
   </body>
   </html>
+
+  <script>
+    import '../scripts/scroll.js';
+</script>
   
-  <Header></Header>
-  <Splash></Splash>
-  <Divider></Divider>
-  <ProjMap></ProjMap>
-  <Divider></Divider>
-  <P5></P5>
-  <Divider></Divider>
-  <City></City>
-  <Divider></Divider>
-  <Three></Three>
-  
-  <Footer></Footer>

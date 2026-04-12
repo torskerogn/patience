@@ -23,3 +23,18 @@
     @apply font-extrabold text-5xl;
   }
 }
+
+@layer base {
+  * {
+    @apply transition-colors duration-100;
+  }
+  html {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-light text-dark;
+  }
+  .dark body {
+    @apply bg-dark text-light;
+  }
+}
