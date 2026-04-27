@@ -1,13 +1,13 @@
 ---
 import '../styles/global.css';
-import Header from '../components/Header.astro';
 import Splash from '../components/Splash.astro'
 import ProjMap from '../components/ProjMap.astro';
-import Divider from '../components/Divider.astro'
 import P5 from '../components/P5.astro'
 import City from '../components/City.astro'
 import Three from '../components/Three.astro'
-import Footer from '../components/Footer.astro'
+import Burger from '../components/Burger.astro';
+import SlideMenu from '../components/SlideMenu.astro'
+import DarkToggle from '../components/DarkToggle.astro'
 ---
 
 <html lang="en">
@@ -16,46 +16,17 @@ import Footer from '../components/Footer.astro'
     <meta name="viewport" content="width=device-width" />
     <title>patience</title>
   </head>
-  <body class="px-0 md:px-80">
-
-        <Header />
-    <div class="h-screen overflow-y-scroll snap-y snap-mandatory">
-        <section class="h-screen snap-start"><Splash /></section>
-        <section class="h-screen snap-start"><ProjMap /></section>
-        <section class="h-screen snap-start"><P5 /></section>
-        <section class="h-screen snap-start"><City /></section>
-        <section class="h-screen snap-start"><Three /></section>
-    </div>
-    <Footer />
-
-    <!-- <div class="snap-start"><Header></Header></div>
-    <div class="snap-start"><Splash></Splash></div>
-    <Divider></Divider>
-    <div class="snap-start"><ProjMap></ProjMap></div>
-    <Divider></Divider>
-    <div class="snap-start"><P5></P5></div>
-    <Divider></Divider>
-    <div class="snap-start"><City></City></div>
-    <Divider></Divider>
-    <div class="snap-start"><Three></Three></div>
-
-    <Footer></Footer> -->
-
-    <!-- <Header></Header>
-    <Splash></Splash>
-    <Divider></Divider>
-    <ProjMap></ProjMap>
-    <Divider></Divider>
-    <P5></P5>
-    <Divider></Divider>
-    <City></City>
-    <Divider></Divider>
-    <Three></Three>
-    <Footer></Footer> -->
-  </body>
-  </html>
-
-  <script>
-    import '../scripts/scroll.js';
-</script>
-  
+<body class="px-0 md:px-80">
+    <Burger />
+    <DarkToggle />
+    <SlideMenu />
+    <script src="../scripts/menu.js"></script>
+<div class="h-screen overflow-y-scroll snap-y snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+    <section class="snap-start"><Splash /></section>
+    <section class="h-[calc(100vh-80px)] snap-start"><ProjMap /></section>
+    <section class="h-[calc(100vh-80px)] snap-start"><P5 /></section>
+    <section class="h-[calc(100vh-80px)] snap-start"><City /></section>
+    <section class="h-[calc(100vh-80px)] snap-start"><Three /></section>
+</div>
+</body>
+</html>

@@ -2,25 +2,23 @@
 import '../styles/global.css';
 ---
 
-<div class="relative">
-  <picture>
-    <source media="(min-width: 768px)" srcset="/images/splash-desktop.png" />
-    <img src="/images/splash-mobile.png" alt="splash" class="w-full px-4 md:px-0 h-[800px] md:h-[500px] object-cover" />
-  </picture>
-
-  <div class="absolute top-8 left-8 text-white text-subheader">
-    welcome to
-  </div>
-
-  <div class="absolute top-16 left-8 text-white text-subheader">
-    the portfolio of...
-  </div>
-
-  <div class="absolute top-24 left-8 text-white text-header">
-    valdemar verup
-  </div>
-
-  <div class="absolute bottom-8 right-8 text-white text-body">
-    see what i'm up to...
-  </div>    
+<div class="h-screen flex flex-col items-center justify-center gap-2 md:gap-0 snap-start">
+    <video
+        class="w-[90vw] md:w-[60vw] aspect-video object-contain"
+        autoplay loop muted playsinline
+    >
+        <source src="/videos/SHOWREEL.webm" type="video/webm" />
+    </video>
+    <video
+        class="w-[90vw] aspect-video object-contain block md:hidden"
+        autoplay loop muted playsinline
+    >
+        <source src="/videos/SHOWREEL.webm" type="video/webm" />
+    </video>
+    <video
+        class="w-[90vw] aspect-video object-contain block md:hidden"
+        autoplay loop muted playsinline
+    >
+        <source src="/videos/SHOWREEL.webm" type="video/webm" />
+    </video>
 </div>

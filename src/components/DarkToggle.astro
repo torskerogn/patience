@@ -1,0 +1,15 @@
+---
+import '../styles/global.css';
+---
+
+<div class="fixed left-5 top-5 z-50">
+    <label class="relative inline-block w-[5rem] h-[2.5rem] cursor-pointer">
+        <input type="checkbox" id="darkToggle" class="sr-only peer" />
+        <div class="w-full h-full border-2 border-dark dark:border-light rounded-full transition-colors duration-300"></div>
+        <div class="absolute top-[0.35rem] left-[0.35rem] w-7 h-7 bg-dark dark:bg-light rounded-full peer-checked:translate-x-10 transition-all duration-300"></div>
+    </label>
+</div>
+
+<script>
+    import '../scripts/darkmode.js';
+</script>

@@ -25,11 +25,11 @@
 }
 
 @layer base {
-  * {
-    @apply transition-colors duration-100;
-  }
   html {
     color-scheme: light;
+  }
+  * {
+    @apply transition-colors duration-300;
   }
   body {
     @apply bg-light text-dark;
