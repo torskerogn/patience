@@ -23,6 +23,12 @@
   white-space: normal;
 }
 
+@media (max-width: 767px) {
+  .glitch-hover {
+    white-space: normal;
+  }
+}
+
 .h-screen {
   height: 100dvh;
 }
@@ -33,7 +39,7 @@
 
 @layer components {
   .text-display {
-    @apply font-black italic text-5xl md:text-8xl leading-tight;
+    @apply font-black italic text-3xl md:text-8xl leading-tight;
   }
 
   .text-heading {
