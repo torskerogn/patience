@@ -23,11 +23,15 @@ import GameDesign from '../components/GameDesign.astro';
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=VT323&family=Major+Mono+Display&family=Instrument+Serif&display=swap" rel="stylesheet">
   </head>
 <body class="px-0 md:px-80">
+
+  <div id="ui" class="opacity-0 transition-opacity duration-700">
     <Burger />
     <DarkToggle />
     <SlideMenu />
     <SocialIcons class="hidden md:grid fixed left-5 bottom-5 z-50" />
     <FadeOverlay />
+  </div>
+
     <script src="../scripts/menu.js"></script>
       <script>
         import '../scripts/glitch-hover.js';
@@ -35,7 +39,8 @@ import GameDesign from '../components/GameDesign.astro';
         <script>
           import '../scripts/pixel-resolve.js';
         </script>
-<div class="h-screen overflow-y-scroll snap-y snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+
+<div id="scroll-container" class="h-screen overflow-hidden snap-y snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
     <section class="snap-start"><Splash /></section>
     <section class="h-[calc(100vh-80px)] snap-start"><WhoAmi /></section>
     <section class="h-[calc(100vh-80px)] snap-start"><City /></section>
