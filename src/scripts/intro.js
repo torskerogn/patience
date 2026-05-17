@@ -69,9 +69,12 @@ const run = async () => {
   await wait(300);
   await typeText(heading, '< welcome />');
 
-  await wait(800);
+    await wait(800);
   heading.classList.add('hidden');
-  if (video) video.classList.remove('hidden');
+  if (video) {
+    video.classList.remove('hidden');
+    video.play();
+  }
 
   await wait(500);
   if (ui) ui.style.opacity = '1';
