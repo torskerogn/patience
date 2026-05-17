@@ -1,0 +1,22 @@
+---
+// src/components/SocialIcons.astro
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`grid grid-rows-4 gap-4 ${className}`}>
+    <a href="https://dk.linkedin.com/in/valdemar-verup-91431528b" target="_blank" aria-label="LinkedIn">
+        <img src="/icons/linkedin.svg" alt="" class="size-16 invert dark:invert-0">
+    </a>
+    <a href="https://www.instagram.com/valdefar_/?hl=da" target="_blank" aria-label="Instagram">
+        <img src="/icons/instagram.svg" alt="" class="size-16 invert dark:invert-0">
+    </a>
+    <a href="https://open.spotify.com/playlist/2VGVhYLi709QBApNJo7WSO?si=308c85097d3c4502" target="_blank" aria-label="Spotify">
+        <img src="/icons/spotify.svg" alt="" class="size-16 invert dark:invert-0">
+    </a>
+    <a href="https://github.com/torskerogn" target="_blank" aria-label="GitHub">
+        <img src="/icons/github.svg" alt="" class="size-16 invert dark:invert-0">
+    </a>
+</div>

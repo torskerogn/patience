@@ -2,30 +2,32 @@
 import '../styles/global.css';
 import Splash from '../components/Splash.astro'
 import ProjMap from '../components/ProjMap.astro';
-import P5 from '../components/P5.astro'
 import City from '../components/City.astro'
 import Three from '../components/Three.astro'
 import Burger from '../components/Burger.astro';
 import SlideMenu from '../components/SlideMenu.astro'
 import DarkToggle from '../components/DarkToggle.astro'
+import Aaben from '../components/Aaben.astro';
+import SocialIcons from '../components/SocialIcons.astro';
 ---
 
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>patience</title>
   </head>
 <body class="px-0 md:px-80">
     <Burger />
     <DarkToggle />
     <SlideMenu />
+    <SocialIcons class="hidden md:grid fixed left-5 bottom-5 z-50" />
     <script src="../scripts/menu.js"></script>
 <div class="h-screen overflow-y-scroll snap-y snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
     <section class="snap-start"><Splash /></section>
-    <section class="h-[calc(100vh-80px)] snap-start"><ProjMap /></section>
-    <section class="h-[calc(100vh-80px)] snap-start"><P5 /></section>
     <section class="h-[calc(100vh-80px)] snap-start"><City /></section>
+    <section class="h-[calc(100vh-80px)] snap-start"><Aaben /></section>
+    <section class="h-[calc(100vh-80px)] snap-start"><ProjMap /></section>
     <section class="h-[calc(100vh-80px)] snap-start"><Three /></section>
 </div>
 </body>

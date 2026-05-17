@@ -8,6 +8,9 @@ export default {
         light: '#FFFFFF',
         dark: '#212121',
       },
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+      },
     },
   },
   plugins: [],

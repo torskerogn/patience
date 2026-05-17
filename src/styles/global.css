@@ -1,38 +1,47 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-VariableItalic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .text-header {
-    @apply font-bold text-4xl;
+  .text-display {
+    @apply font-black italic text-5xl md:text-8xl leading-tight;
   }
 
-  .text-subheader {
-    @apply font-semibold text-2xl;
+  .text-heading {
+    @apply font-bold text-xl md:text-3xl leading-snug;
   }
 
   .text-body {
-    @apply font-normal text-base;
-  }
-
-  .text-caption {
-    @apply font-light text-sm;
-  }
-
-  .text-display {
-    @apply font-extrabold text-5xl;
+    @apply font-normal text-sm md:text-lg leading-relaxed;
   }
 }
 
 @layer base {
   html {
     color-scheme: light;
+    font-family: 'Montserrat', sans-serif;
   }
   * {
     @apply transition-colors duration-300;
   }
   body {
-    @apply bg-light text-dark;
+    @apply bg-light text-dark overflow-x-hidden overflow-y-auto;
   }
   .dark body {
     @apply bg-dark text-light;
