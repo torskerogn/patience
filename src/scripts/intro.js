@@ -72,15 +72,14 @@ const run = async () => {
     await wait(800);
   heading.classList.add('hidden');
   if (video) {
-    video.classList.remove('hidden');
+    video.classList.remove('opacity-0', 'h-0', 'overflow-hidden');
     video.play();
   }
-
   await wait(500);
   if (ui) ui.style.opacity = '1';
 
   await wait(600);
-  if (cta) cta.classList.remove('hidden');
+  if (cta) cta.classList.remove('opacity-0');
 
   await wait(300);
   if (scrollContainer) {
