@@ -14,6 +14,15 @@
   font-display: swap;
 }
 
+.glitch-hover {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.glitch-hover.glitch-wrap {
+  white-space: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -9,6 +9,10 @@ import SlideMenu from '../components/SlideMenu.astro'
 import DarkToggle from '../components/DarkToggle.astro'
 import Aaben from '../components/Aaben.astro';
 import SocialIcons from '../components/SocialIcons.astro';
+import WhoAmi from '../components/WhoAmi.astro';
+import FadeOverlay from '../components/FadeOverlay.astro';
+import Blender from '../components/Blender.astro';
+import GameDesign from '../components/GameDesign.astro';
 ---
 
 <html lang="en" class="overflow-x-hidden">
@@ -16,19 +20,31 @@ import SocialIcons from '../components/SocialIcons.astro';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>patience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=VT323&family=Major+Mono+Display&family=Instrument+Serif&display=swap" rel="stylesheet">
   </head>
 <body class="px-0 md:px-80">
     <Burger />
     <DarkToggle />
     <SlideMenu />
     <SocialIcons class="hidden md:grid fixed left-5 bottom-5 z-50" />
+    <FadeOverlay />
     <script src="../scripts/menu.js"></script>
+      <script>
+        import '../scripts/glitch-hover.js';
+      </script>
+        <script>
+          import '../scripts/pixel-resolve.js';
+        </script>
 <div class="h-screen overflow-y-scroll snap-y snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
     <section class="snap-start"><Splash /></section>
+    <section class="h-[calc(100vh-80px)] snap-start"><WhoAmi /></section>
     <section class="h-[calc(100vh-80px)] snap-start"><City /></section>
     <section class="h-[calc(100vh-80px)] snap-start"><Aaben /></section>
     <section class="h-[calc(100vh-80px)] snap-start"><ProjMap /></section>
     <section class="h-[calc(100vh-80px)] snap-start"><Three /></section>
+    <section class="h-[calc(100vh-80px)] snap-start"><Blender /></section>
+    <section class="h-[calc(100vh-80px)] snap-start"><GameDesign /></section>
+    
 </div>
 </body>
 </html>

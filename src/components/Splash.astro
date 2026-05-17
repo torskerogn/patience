@@ -2,23 +2,15 @@
 import '../styles/global.css';
 ---
 
-<div class="bg-transparent h-screen flex flex-col items-center justify-center gap-2 md:gap-0 snap-start">
-    <video
-        class="bg-transparent w-[90vw] md:w-[60vw] aspect-video object-contain"
-        autoplay loop muted playsinline
-    >
-        <source src="/videos/SHOWREEL.webm" type="video/webm" />
-    </video>
-    <video
-        class="w-[90vw] aspect-video object-contain block md:hidden"
-        autoplay loop muted playsinline
-    >
-        <source src="/videos/SHOWREEL.webm" type="video/webm" />
-    </video>
-    <video
-        class="w-[90vw] aspect-video object-contain block md:hidden"
-        autoplay loop muted playsinline
-    >
-        <source src="/videos/SHOWREEL.webm" type="video/webm" />
-    </video>
+<div class="bg-transparent h-screen grid place-items-center snap-start">
+    <div class="flex flex-col items-center gap-4">
+        <h1 class="glitch-hover text-heading text-center">Hello Human — Welcome</h1>
+        <video
+            class="bg-transparent w-[70vw] md:w-[60vw] aspect-video object-contain"
+            autoplay loop muted playsinline
+        >
+            <source src="/videos/SHOWREEL.webm" type="video/webm" />
+        </video>
+        <p class="text-body opacity-50 animate-bounce">↓ Scroll to explore</p>
+    </div>
 </div>
