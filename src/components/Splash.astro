@@ -2,19 +2,19 @@
 import '../styles/global.css';
 ---
 
-<div id="splash" class="h-[100dvh] snap-start grid place-items-center">
-    <div class="flex flex-col items-center gap-6">
+<div id="splash" class="h-[100dvh] snap-start grid place-items-center relative overflow-hidden">
+    <div class="flex flex-col items-center gap-6 z-10">
         <h1 id="intro-heading" class="text-display text-center"></h1>
-        <video
-            id="intro-video"
-            class="w-[90vw] md:w-[60vw] aspect-video object-contain opacity-0 h-0 overflow-hidden"
-            autoplay loop muted playsinline
-        >
-            <source src="/videos/SHOWREEL.mp4" type="video/mp4" />
-            <source src="/videos/SHOWREEL.webm" type="video/webm" />
-        </video>
-        <p id="intro-cta" class="text-body opacity-0 rotate-90 text-2xl">&gt;</p>
     </div>
+
+    <video
+        id="intro-video"
+        class="absolute inset-0 m-auto w-[90vw] md:w-[60vw] aspect-video object-contain opacity-0 transition-opacity duration-700"
+        autoplay loop muted playsinline
+    >
+        <source src="/videos/SHOWREEL.mp4" type="video/mp4" />
+        <source src="/videos/SHOWREEL.webm" type="video/webm" />
+    </video>
 </div>
 
 <script>

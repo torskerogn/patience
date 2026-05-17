@@ -51,7 +51,6 @@ const glitchFlicker = (el, duration = 500, speed = 40) => {
 const run = async () => {
   const heading = document.getElementById('intro-heading');
   const video = document.getElementById('intro-video');
-  const cta = document.getElementById('intro-cta');
   const ui = document.getElementById('ui');
   const scrollContainer = document.getElementById('scroll-container');
 
@@ -69,17 +68,16 @@ const run = async () => {
   await wait(300);
   await typeText(heading, '< welcome />');
 
-    await wait(800);
+  await wait(800);
   heading.classList.add('hidden');
   if (video) {
-    video.classList.remove('opacity-0', 'h-0', 'overflow-hidden');
+    video.currentTime = 0;
+    video.classList.remove('opacity-0');
     video.play();
   }
+
   await wait(500);
   if (ui) ui.style.opacity = '1';
-
-  await wait(600);
-  if (cta) cta.classList.remove('opacity-0');
 
   await wait(300);
   if (scrollContainer) {
