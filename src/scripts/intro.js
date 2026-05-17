@@ -73,7 +73,12 @@ const run = async () => {
   if (video) {
     video.currentTime = 0;
     video.classList.remove('opacity-0');
-    video.play();
+    video.play().catch(() => {
+      document.addEventListener('touchstart', () => {
+        video.currentTime = 0;
+        video.play();
+      }, { once: true });
+    });
   }
 
   await wait(500);

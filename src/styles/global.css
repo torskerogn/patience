@@ -33,6 +33,12 @@
   height: 100dvh;
 }
 
+#intro-video::-webkit-media-controls-start-playback-button,
+#intro-video::-webkit-media-controls {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
