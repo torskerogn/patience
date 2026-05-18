@@ -8,25 +8,32 @@ const flickerFonts = [
   '"Instrument Serif", serif',
 ];
 
+const flickerColors = [
+  '#FC7A1E',
+  '#2622F7',
+];
+
 const defaultFont = "'Montserrat', sans-serif";
-const DELAY = 300;     // ms before flicker starts after entering view
-const DURATION = 500;  // ms the flicker runs
-const SPEED = 40;      // ms between font swaps
+const DELAY = 300;
+const DURATION = 500;
+const SPEED = 40;
 
 document.querySelectorAll('.glitch-hover').forEach((el) => {
   let intervalId = null;
   let delayId = null;
   let durationId = null;
+  const originalColor = getComputedStyle(el).color;
 
   const startFlicker = () => {
     intervalId = setInterval(() => {
-      const randomFont = flickerFonts[Math.floor(Math.random() * flickerFonts.length)];
-      el.style.fontFamily = randomFont;
+      el.style.fontFamily = flickerFonts[Math.floor(Math.random() * flickerFonts.length)];
+      el.style.color = flickerColors[Math.floor(Math.random() * flickerColors.length)];
     }, SPEED);
 
     durationId = setTimeout(() => {
       clearInterval(intervalId);
       el.style.fontFamily = defaultFont;
+      el.style.color = originalColor;
     }, DURATION);
   };
 
@@ -35,6 +42,7 @@ document.querySelectorAll('.glitch-hover').forEach((el) => {
     clearTimeout(durationId);
     clearInterval(intervalId);
     el.style.fontFamily = defaultFont;
+    el.style.color = originalColor;
   };
 
   const observer = new IntersectionObserver((entries) => {

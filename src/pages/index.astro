@@ -13,6 +13,7 @@ import WhoAmi from '../components/WhoAmi.astro';
 import FadeOverlay from '../components/FadeOverlay.astro';
 import Blender from '../components/Blender.astro';
 import GameDesign from '../components/GameDesign.astro';
+import PipeDraw from '../components/PipeDraw.astro';
 ---
 
 <html lang="en" class="overflow-x-hidden">
@@ -30,15 +31,17 @@ import GameDesign from '../components/GameDesign.astro';
     <SlideMenu />
     <SocialIcons class="hidden md:grid fixed left-5 bottom-5 z-50" />
     <FadeOverlay />
+    <PipeDraw />
   </div>
 
     <script src="../scripts/menu.js"></script>
       <script>
         import '../scripts/glitch-hover.js';
       </script>
-        <script>
-          import '../scripts/pixel-resolve.js';
-        </script>
+
+      <script>
+        import '../scripts/pixel-resolve.js';
+      </script>
 
 <div id="scroll-container" class="h-[100dvh] overflow-hidden md:snap-y md:snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
     <section class="md:snap-start"><Splash /></section>

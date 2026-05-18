@@ -1,0 +1,21 @@
+---
+import '../styles/global.css';
+---
+
+<div id="pipe-wrapper" class="hidden md:block fixed right-5 top-36 bottom-4 w-[230px] z-40 transition-transform duration-300 group">
+    <button
+        id="pipe-collapse"
+        class="absolute left-2 top-1/2 -translate-y-1/2 text-heading opacity-0 group-hover:opacity-50 hover:!opacity-100 transition-opacity cursor-pointer z-10"
+    >&gt;</button>
+    <div id="pipe-canvas" class="w-full h-full rounded-xl overflow-hidden"></div>
+    <button
+        id="pipe-save"
+        class="absolute bottom-4 right-4 text-body px-2 py-1 opacity-30 hover:opacity-100 transition-opacity bg-light dark:bg-dark border border-dark/10 dark:border-light/10 rounded cursor-pointer"
+    >
+        Save PNG
+    </button>
+</div>
+
+<script>
+    import '../scripts/pipe-draw.js';
+</script>
