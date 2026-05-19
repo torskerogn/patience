@@ -22,7 +22,6 @@ document.querySelectorAll('.glitch-hover').forEach((el) => {
   let intervalId = null;
   let delayId = null;
   let durationId = null;
-  const originalColor = getComputedStyle(el).color;
 
   const startFlicker = () => {
     intervalId = setInterval(() => {
@@ -33,7 +32,7 @@ document.querySelectorAll('.glitch-hover').forEach((el) => {
     durationId = setTimeout(() => {
       clearInterval(intervalId);
       el.style.fontFamily = defaultFont;
-      el.style.color = originalColor;
+      el.style.color = '';
     }, DURATION);
   };
 
@@ -42,7 +41,7 @@ document.querySelectorAll('.glitch-hover').forEach((el) => {
     clearTimeout(durationId);
     clearInterval(intervalId);
     el.style.fontFamily = defaultFont;
-    el.style.color = originalColor;
+    el.style.color = '';
   };
 
   const observer = new IntersectionObserver((entries) => {

@@ -1,3 +1,13 @@
+const DEV = true;
+if (DEV) {
+  document.getElementById('ui')?.style.setProperty('opacity', '1');
+  document.getElementById('intro-video')?.classList.remove('opacity-0');
+  document.getElementById('intro-heading')?.classList.add('hidden');
+  document.getElementById('spine-canvas')?.style.setProperty('opacity', '1');
+  const sc = document.getElementById('scroll-container');
+  if (sc) { sc.classList.remove('overflow-hidden'); sc.classList.add('overflow-y-scroll'); }
+}
+
 const flickerFonts = [
   '"Space Mono", monospace',
   '"VT323", monospace',
@@ -83,6 +93,8 @@ const run = async () => {
 
   await wait(500);
   if (ui) ui.style.opacity = '1';
+  const spine = document.getElementById('spine-canvas');
+  if (spine) spine.style.opacity = '1';
 
   await wait(300);
   if (scrollContainer) {

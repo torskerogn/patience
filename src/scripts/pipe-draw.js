@@ -1,29 +1,24 @@
 import p5 from 'p5';
+import { palette } from './palette.js';
 
 new p5((p) => {
   const MIN_BRUSH = 10;
   const MAX_BRUSH = 40;
-  const STUBBORNNESS = 20;
+  const STUBBORNNESS = 35;
   const GRAIN_FACTOR = 30;
   const STEP = 4;
   const CYCLE_LENGTH = 2400;
   const diag = STEP * Math.SQRT1_2;
 
-  const palettes = [
-    [[38,34,247],[255,248,225],[252,122,30],[33,33,33]],
-    [[250,201,184],[229,212,192],[197,222,205],[161,232,204]],
-    [[255,227,220],[226,132,19],[162,173,145],[222,60,75]],
-    [[255,164,0],[0,159,253],[42,42,114],[35,37,40]],
-    [[242,239,234],[252,119,83],[73,145,103],[63,69,49]],
-  ];
-
-  const palette = palettes[Math.floor(Math.random() * palettes.length)];
-
   const dirs = [
-    { dx: -diag, dy: -diag },
-    { dx:  diag, dy: -diag },
-    { dx: -diag, dy:  diag },
-    { dx:  diag, dy:  diag },
+    { dx:  0,    dy: -STEP },  // up
+    { dx:  diag, dy: -diag },  // up-right
+    { dx:  STEP, dy:  0    },  // right
+    { dx:  diag, dy:  diag },  // down-right
+    { dx:  0,    dy:  STEP },  // down
+    { dx: -diag, dy:  diag },  // down-left
+    { dx: -STEP, dy:  0    },  // left
+    { dx: -diag, dy: -diag },  // up-left
   ];
 
   let totalSteps = 0;
@@ -49,8 +44,10 @@ new p5((p) => {
   function snapDir(dx, dy) {
     let best = 0, bestDot = -Infinity;
     const len = Math.sqrt(dx * dx + dy * dy) || 1;
+    const nx = dx / len, ny = dy / len;
     for (let i = 0; i < dirs.length; i++) {
-      const dot = (dx * dirs[i].dx + dy * dirs[i].dy) / (len * STEP);
+      const dLen = Math.sqrt(dirs[i].dx * dirs[i].dx + dirs[i].dy * dirs[i].dy) || 1;
+      const dot = nx * (dirs[i].dx / dLen) + ny * (dirs[i].dy / dLen);
       if (dot > bestDot) { bestDot = dot; best = i; }
     }
     return best;
@@ -81,7 +78,9 @@ new p5((p) => {
       currentDir = wanted;
     } else if (wanted !== currentDir) {
       const cd = dirs[currentDir];
-      if (Math.abs(dx * (-cd.dy) + dy * cd.dx) / STEP > STUBBORNNESS) currentDir = wanted;
+      const cdLen = Math.sqrt(cd.dx * cd.dx + cd.dy * cd.dy) || 1;
+      const perpDist = Math.abs(dx * (-cd.dy / cdLen) + dy * (cd.dx / cdLen));
+      if (perpDist > STUBBORNNESS) currentDir = wanted;
     }
 
     const dir = dirs[currentDir];
@@ -113,26 +112,19 @@ new p5((p) => {
     const footerH = 70;
     const y = h - footerH;
 
-    // White background bar
     ctx.fillStyle = '#FFFFFF';
     ctx.fillRect(0, y, w, footerH);
 
-    // QR code
     if (qrImage) {
-      const qrSize = 55;
-      ctx.drawImage(qrImage, 8, y + 8, qrSize, qrSize);
+      ctx.drawImage(qrImage, 8, y + 8, 55, 55);
     }
 
-    // Text
     const textX = 70;
-
     ctx.fillStyle = '#212121';
     ctx.font = 'bold italic 16px Montserrat, sans-serif';
     ctx.fillText('Valdemar Verup', textX, y + 22);
-
     ctx.font = '12px Montserrat, sans-serif';
     ctx.fillText('Coded Design, DMJX', textX, y + 38);
-
     ctx.font = '9px Montserrat, sans-serif';
     ctx.fillText('+45 3049 2005', textX, y + 54);
     ctx.fillText('valdemar@verup.biz', textX + 68, y + 54);
