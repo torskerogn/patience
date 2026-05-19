@@ -1,4 +1,4 @@
-const DEV = true;
+const DEV = false;
 if (DEV) {
   document.getElementById('ui')?.style.setProperty('opacity', '1');
   document.getElementById('intro-video')?.classList.remove('opacity-0');
