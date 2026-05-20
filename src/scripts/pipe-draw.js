@@ -2,8 +2,8 @@ import p5 from 'p5';
 import { palette } from './palette.js';
 
 new p5((p) => {
-  const MIN_BRUSH = 10;
-  const MAX_BRUSH = 40;
+  const MIN_BRUSH = 40;
+  const MAX_BRUSH = 10;
   const STUBBORNNESS = 35;
   const GRAIN_FACTOR = 30;
   const STEP = 4;
@@ -11,14 +11,14 @@ new p5((p) => {
   const diag = STEP * Math.SQRT1_2;
 
   const dirs = [
-    { dx:  0,    dy: -STEP },  // up
-    { dx:  diag, dy: -diag },  // up-right
-    { dx:  STEP, dy:  0    },  // right
-    { dx:  diag, dy:  diag },  // down-right
-    { dx:  0,    dy:  STEP },  // down
-    { dx: -diag, dy:  diag },  // down-left
-    { dx: -STEP, dy:  0    },  // left
-    { dx: -diag, dy: -diag },  // up-left
+    { dx:  0,    dy: -STEP },
+    { dx:  diag, dy: -diag },
+    { dx:  STEP, dy:  0    },
+    { dx:  diag, dy:  diag },
+    { dx:  0,    dy:  STEP },
+    { dx: -diag, dy:  diag },
+    { dx: -STEP, dy:  0    },
+    { dx: -diag, dy: -diag },
   ];
 
   let totalSteps = 0;
@@ -62,6 +62,31 @@ new p5((p) => {
       pg.pixels[i + 2] = p.constrain(pg.pixels[i + 2] + n, 0, 255);
     }
     pg.updatePixels();
+  }
+
+  function saveState() {
+    try {
+      sessionStorage.setItem('pipe-canvas', pg.canvas.toDataURL('image/png'));
+      sessionStorage.setItem('pipe-drawX', drawX);
+      sessionStorage.setItem('pipe-drawY', drawY);
+      sessionStorage.setItem('pipe-totalSteps', totalSteps);
+    } catch (e) {}
+  }
+
+  function restoreState(w, h) {
+    const saved = sessionStorage.getItem('pipe-canvas');
+    if (!saved) return false;
+
+    const img = new Image();
+    img.onload = () => {
+      pg.drawingContext.drawImage(img, 0, 0, w, h);
+    };
+    img.src = saved;
+
+    drawX = parseFloat(sessionStorage.getItem('pipe-drawX')) || w / 2;
+    drawY = parseFloat(sessionStorage.getItem('pipe-drawY')) || h / 2;
+    totalSteps = parseInt(sessionStorage.getItem('pipe-totalSteps')) || 0;
+    return true;
   }
 
   function handleMove(e) {
@@ -138,9 +163,16 @@ new p5((p) => {
     p.createCanvas(w, h).parent(container);
     pg = p.createGraphics(w, h);
 
-    const isDark = document.documentElement.classList.contains('dark');
-    pg.background(isDark ? 29 : 255);
-    drawX = w / 2; drawY = h / 2;
+    // Restore if intro was already played (returning from projects)
+    const shouldRestore = sessionStorage.getItem('intro-played') === 'true';
+
+    if (shouldRestore && restoreState(w, h)) {
+      // Restored from session
+    } else {
+      const isDark = document.documentElement.classList.contains('dark');
+      pg.background(isDark ? 29 : 255);
+      drawX = w / 2; drawY = h / 2;
+    }
 
     const img = new Image();
     img.onload = () => { qrImage = img; };
@@ -150,6 +182,11 @@ new p5((p) => {
 
     const scrollContainer = document.getElementById('scroll-container');
     if (scrollContainer) scrollContainer.addEventListener('scroll', handleScroll);
+
+    // Save canvas state when navigating to projects
+    document.querySelectorAll('a[href^="/projects"]').forEach((link) => {
+      link.addEventListener('click', saveState);
+    });
 
     const collapseBtn = document.getElementById('pipe-collapse');
     const wrapper = document.getElementById('pipe-wrapper');

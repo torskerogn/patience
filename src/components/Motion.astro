@@ -1,15 +1,17 @@
 ---
 import '../styles/global.css';
 ---
-<div class="px-4 md:px-0 bg-transparent pt-28 snap-start">
+<div class="px-4 md:px-0 bg-transparent mt-12 md:mt-28 snap-start">
     <h1 class="text-display mb-5">Motion Design</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="text-heading">After Effects
             <div class="text-body hidden md:block"><span class="font-extralight italic">Solo projects</span><br>Various projects all containing motion design. Explainers, logo-animation etc. Showreel too!</div>
         </div>
-            <video class="w-full aspect-square object-cover rounded-xl" autoplay loop muted playsinline>
-                <source src="/videos/motion.mp4" type="video/mp4" />
-                <source src="/videos/motion.webm" type="video/webm" />
-            </video>
+            <a href="/projects#motion" class="block rounded-xl bg-dark/20 dark:bg-light/20">
+                <video class="w-full aspect-square object-cover rounded-xl transition-all duration-300 hover:scale-95 hover:brightness-75" autoplay loop muted playsinline>
+                    <source src="/videos/motion.mp4" type="video/mp4" />
+                    <source src="/videos/motion.webm" type="video/webm" />
+                </video>
+            </a>
     </div>
 </div>

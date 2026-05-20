@@ -39,6 +39,24 @@
   -webkit-appearance: none;
 }
 
+.hover-nudge-right:hover {
+  transform: translateX(10px);
+  transition: transform 0.3s ease;
+}
+
+.hover-nudge-right {
+  transition: transform 0.3s ease;
+}
+
+.hover-nudge-left:hover {
+  transform: translateX(-10px);
+  transition: transform 0.3s ease;
+}
+
+.hover-nudge-left {
+  transition: transform 0.3s ease;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,11 +1,29 @@
-const DEV = false;
-if (DEV) {
+// Check navigation type FIRST before anything
+const nav = performance.getEntriesByType('navigation')[0];
+const isReload = nav && nav.type === 'reload';
+const isFirstVisit = !sessionStorage.getItem('intro-played');
+
+// Clear everything on reload or first visit
+if (isReload || isFirstVisit) {
+  sessionStorage.removeItem('intro-played');
+  sessionStorage.removeItem('scroll-pos');
+  sessionStorage.removeItem('pipe-canvas');
+  sessionStorage.removeItem('pipe-drawX');
+  sessionStorage.removeItem('pipe-drawY');
+  sessionStorage.removeItem('pipe-totalSteps');
+}
+
+const SHOULD_SKIP = sessionStorage.getItem('intro-played') === 'true';
+
+const DEV = true;
+if (DEV && !SHOULD_SKIP) {
   document.getElementById('ui')?.style.setProperty('opacity', '1');
   document.getElementById('intro-video')?.classList.remove('opacity-0');
   document.getElementById('intro-heading')?.classList.add('hidden');
   document.getElementById('spine-canvas')?.style.setProperty('opacity', '1');
   const sc = document.getElementById('scroll-container');
   if (sc) { sc.classList.remove('overflow-hidden'); sc.classList.add('overflow-y-scroll'); }
+  sessionStorage.setItem('intro-played', 'true');
 }
 
 const flickerFonts = [
@@ -58,13 +76,40 @@ const glitchFlicker = (el, duration = 500, speed = 40) => {
   });
 };
 
+function skipIntro() {
+  const heading = document.getElementById('intro-heading');
+  const video = document.getElementById('intro-video');
+  const ui = document.getElementById('ui');
+  const scrollContainer = document.getElementById('scroll-container');
+  const spine = document.getElementById('spine-canvas');
+
+  if (heading) heading.classList.add('hidden');
+  if (video) { video.classList.remove('opacity-0'); video.play().catch(() => {}); }
+  if (ui) ui.style.opacity = '1';
+  if (spine) spine.style.opacity = '1';
+  if (scrollContainer) {
+    scrollContainer.classList.remove('overflow-hidden');
+    scrollContainer.classList.add('overflow-y-scroll');
+    const saved = sessionStorage.getItem('scroll-pos');
+    if (saved) {
+      setTimeout(() => { scrollContainer.scrollTop = parseInt(saved); }, 150);
+    }
+  }
+}
+
 const run = async () => {
   const heading = document.getElementById('intro-heading');
   const video = document.getElementById('intro-video');
   const ui = document.getElementById('ui');
   const scrollContainer = document.getElementById('scroll-container');
+  const spine = document.getElementById('spine-canvas');
 
   if (!heading) return;
+
+  if (SHOULD_SKIP) {
+    skipIntro();
+    return;
+  }
 
   await wait(500);
   await typeText(heading, '< hello human />');
@@ -93,7 +138,6 @@ const run = async () => {
 
   await wait(500);
   if (ui) ui.style.opacity = '1';
-  const spine = document.getElementById('spine-canvas');
   if (spine) spine.style.opacity = '1';
 
   await wait(300);
@@ -101,6 +145,15 @@ const run = async () => {
     scrollContainer.classList.remove('overflow-hidden');
     scrollContainer.classList.add('overflow-y-scroll');
   }
+
+  // Mark intro as done for this session
+  sessionStorage.setItem('intro-played', 'true');
 };
 
 run();
+
+// Always save scroll position
+const sc = document.getElementById('scroll-container');
+if (sc) sc.addEventListener('scroll', () => {
+  sessionStorage.setItem('scroll-pos', sc.scrollTop);
+});

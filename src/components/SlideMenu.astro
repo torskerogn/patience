@@ -5,25 +5,35 @@ import '../styles/global.css';
 <div class="fixed inset-0 pointer-events-none overflow-hidden z-50">
     <div id="menu" class="pointer-events-auto absolute top-0 right-0 h-full translate-x-full transition-transform duration-300 ease-in-out flex">
 
-        <div class="flex items-start bg-light dark:bg-dark">
-            <button id="menu-close" class="h-16 w-16 bg-light dark:bg-dark text-dark dark:text-light text-heading cursor-pointer leading-none" aria-label="Close menu">&gt;</button>
-        </div>
-
-        <nav class="h-full w-[min(250px,40vw)] bg-light dark:bg-dark text-dark dark:text-light p-4 flex flex-col gap-8">
+        <nav class="border-l-8 h-full w-[min(250px,40vw)] bg-light dark:bg-dark text-dark dark:text-light pl-10 pt-5 flex flex-col">
+            <div class="grid grid-cols-2">
+                <a href="/" class="font-bold italic text-2xl block mb-4 hover:font-black">Index</a>
+            </div>
+            
             <div>
-                <a href="/" class="font-black italic text-2xl block mb-4">Index</a>
-                <div class="flex flex-col gap-1 pl-2 text-body opacity-90">
-                    <a href="/#projection-mapping">City Branding</a>
-                    <a href="/#p5js">Åben x Me</a>
-                    <a href="/#city-branding">Projection Mapping</a>
-                    <a href="/#3d">Three.js</a>
+                <a href="/projects" class="font-bold italic text-2xl block mb-4 hover:font-black">Projects</a>
+                <div class="flex flex-col gap-1 pl-4 text-body mb-8">
+                    <a class="hover-nudge-right hover:font-black" href="/projects#city">City Branding</a>
+                    <a class="hover-nudge-right hover:font-black" href="/projects#shecanplay">She Can Play</a>
+                    <a class="hover-nudge-right hover:font-black" href="/projects#aaben">Åben</a>
+                    <a class="hover-nudge-right hover:font-black" href="/projects#projmap">Træet / The Tree</a>
+                    <a class="hover-nudge-right hover:font-black" href="/projects#three">Living Room</a>
+                    <a class="hover-nudge-right hover:font-black" href="/projects#blender">The Island</a>
+                    <a class="hover-nudge-right hover:font-black" href="/projects#gamedesign">Too Drunk?</a>
+                    <a class="hover-nudge-right hover:font-black" href="/projects#motion">Motion Design</a>
                 </div>
             </div>
 
             <div>
-                <a href="/about" class="font-black italic text-2xl block mb-4">about</a>
-                <div class="flex flex-col gap-1 pl-2 text-body opacity-90">
-                </div>
+                <a href="/about" class="font-bold italic text-2xl block mb-4 hover:font-black">About</a>
+            </div>
+
+            <div>
+                <a href="/showreel" class="font-bold italic text-2xl block mb-4 hover:font-black">Showreel</a>
+            </div>
+
+            <div>
+                <a href="/contact" class="font-bold italic text-2xl block mb-4 hover:font-black">Contact</a>
             </div>
         </nav>
 
