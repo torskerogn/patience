@@ -80,7 +80,7 @@
     color-scheme: light;
     font-family: 'Montserrat', sans-serif;
   }
-  * {
+  body, a, button, label, nav, div, p, h1, h2, h3, span {
     @apply transition-colors duration-300;
   }
   body {

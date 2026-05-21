@@ -12,6 +12,7 @@ function show(index) {
   });
   document.getElementById('project-counter').textContent = `${current + 1} / ${ORDER.length}`;
   history.replaceState(null, '', `#${ORDER[current]}`);
+  window.scrollTo(0, 0);
 }
 
 function init() {
