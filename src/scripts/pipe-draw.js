@@ -155,15 +155,26 @@ new p5((p) => {
     ctx.fillText('valdemar@verup.biz', textX + 68, y + 54);
   }
 
+  function matchVideoHeight() {
+    const video = document.getElementById('intro-video');
+    const wrapper = document.getElementById('pipe-wrapper');
+    if (!video || !wrapper) return;
+
+    const rect = video.getBoundingClientRect();
+    wrapper.style.top = rect.top + 'px';
+    wrapper.style.bottom = (window.innerHeight - rect.bottom) + 'px';
+  }
+
   p.setup = () => {
     const container = document.getElementById('pipe-canvas');
     if (!container) return;
+
+    matchVideoHeight();
 
     const w = container.offsetWidth, h = container.offsetHeight;
     p.createCanvas(w, h).parent(container);
     pg = p.createGraphics(w, h);
 
-    // Restore if intro was already played (returning from projects)
     const shouldRestore = sessionStorage.getItem('intro-played') === 'true';
 
     if (shouldRestore && restoreState(w, h)) {
@@ -183,7 +194,6 @@ new p5((p) => {
     const scrollContainer = document.getElementById('scroll-container');
     if (scrollContainer) scrollContainer.addEventListener('scroll', handleScroll);
 
-    // Save canvas state when navigating to projects
     document.querySelectorAll('a[href^="/projects"]').forEach((link) => {
       link.addEventListener('click', saveState);
     });
@@ -191,9 +201,12 @@ new p5((p) => {
     const collapseBtn = document.getElementById('pipe-collapse');
     const wrapper = document.getElementById('pipe-wrapper');
     if (collapseBtn && wrapper) {
+      wrapper.classList.add('translate-x-[calc(100%-24px)]')
+      collapseBtn.textContent = '<'
+
       collapseBtn.addEventListener('click', () => {
         wrapper.classList.toggle('translate-x-[calc(100%-24px)]');
-        collapseBtn.textContent = wrapper.classList.contains('translate-x-[calc(100%-24px)]') ? '<' : '>';
+        collapseBtn.textContent = wrapper.classList.contains('translate-x-[calc(100%-24px)]') ? ' ' : ' ';
       });
     }
 

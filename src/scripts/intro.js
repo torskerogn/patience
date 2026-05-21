@@ -15,14 +15,17 @@ if (isReload || isFirstVisit) {
 
 const SHOULD_SKIP = sessionStorage.getItem('intro-played') === 'true';
 
-const DEV = true;
+const DEV = false;
 if (DEV && !SHOULD_SKIP) {
   document.getElementById('ui')?.style.setProperty('opacity', '1');
   document.getElementById('intro-video')?.classList.remove('opacity-0');
   document.getElementById('intro-heading')?.classList.add('hidden');
   document.getElementById('spine-canvas')?.style.setProperty('opacity', '1');
+  const sh = document.getElementById('scroll-hint');
+  if (sh) { sh.style.opacity = '1'; sh.textContent = 'scroll down to explore...'; }
   const sc = document.getElementById('scroll-container');
   if (sc) { sc.classList.remove('overflow-hidden'); sc.classList.add('overflow-y-scroll'); }
+  positionHint();
   sessionStorage.setItem('intro-played', 'true');
 }
 
@@ -76,17 +79,37 @@ const glitchFlicker = (el, duration = 500, speed = 40) => {
   });
 };
 
+function positionHint() {
+  const video = document.getElementById('intro-video');
+  const hint = document.getElementById('scroll-hint');
+  if (!video || !hint) return;
+
+  const videoBottom = video.getBoundingClientRect().bottom;
+  const viewportBottom = window.innerHeight;
+  const middle = videoBottom + (viewportBottom - videoBottom) / 2;
+
+  hint.style.top = middle + 'px';
+  hint.style.left = '50%';
+  hint.style.transform = 'translateX(-50%)';
+}
+
 function skipIntro() {
   const heading = document.getElementById('intro-heading');
   const video = document.getElementById('intro-video');
   const ui = document.getElementById('ui');
   const scrollContainer = document.getElementById('scroll-container');
   const spine = document.getElementById('spine-canvas');
+  const scrollHint = document.getElementById('scroll-hint');
 
   if (heading) heading.classList.add('hidden');
   if (video) { video.classList.remove('opacity-0'); video.play().catch(() => {}); }
   if (ui) ui.style.opacity = '1';
   if (spine) spine.style.opacity = '1';
+  if (scrollHint) {
+    scrollHint.style.opacity = '1';
+    scrollHint.textContent = 'scroll down to explore...';
+    positionHint();
+  }
   if (scrollContainer) {
     scrollContainer.classList.remove('overflow-hidden');
     scrollContainer.classList.add('overflow-y-scroll');
@@ -103,10 +126,11 @@ const run = async () => {
   const ui = document.getElementById('ui');
   const scrollContainer = document.getElementById('scroll-container');
   const spine = document.getElementById('spine-canvas');
+  const scrollHint = document.getElementById('scroll-hint');
 
   if (!heading) return;
 
-  if (SHOULD_SKIP) {
+  if (SHOULD_SKIP || DEV) {
     skipIntro();
     return;
   }
@@ -146,13 +170,17 @@ const run = async () => {
     scrollContainer.classList.add('overflow-y-scroll');
   }
 
-  // Mark intro as done for this session
+  if (scrollHint) {
+    positionHint();
+    scrollHint.style.opacity = '1';
+    await typeText(scrollHint, 'scroll down to explore...', 50);
+  }
+
   sessionStorage.setItem('intro-played', 'true');
 };
 
 run();
 
-// Always save scroll position
 const sc = document.getElementById('scroll-container');
 if (sc) sc.addEventListener('scroll', () => {
   sessionStorage.setItem('scroll-pos', sc.scrollTop);

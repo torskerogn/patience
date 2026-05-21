@@ -9,12 +9,14 @@ import '../styles/global.css';
 
     <video
         id="intro-video"
-        class="rounded-xl absolute inset-0 m-auto w-[90vw] md:w-[60vw] aspect-video object-contain opacity-0 transition-opacity duration-700"
+        class="rounded-xl absolute inset-0 m-auto w-[90vw] md:w-full aspect-video object-contain opacity-0 transition-opacity duration-700"
         autoplay loop muted playsinline
     >
         <source src="/videos/SHOWREEL.mp4" type="video/mp4" />
         <source src="/videos/SHOWREEL.webm" type="video/webm" />
     </video>
+
+    <p id="scroll-hint" class="z-40 absolute text-body opacity-0 transition-opacity duration-700"></p>
 </div>
 
 <script>
