@@ -8,20 +8,33 @@ import ThreeFull from '../components/projects/ThreeFull.astro';
 import BlenderFull from '../components/projects/BlenderFull.astro';
 import GameDesignFull from '../components/projects/GameDesignFull.astro';
 import MotionFull from '../components/projects/MotionFull.astro';
+
+import Burger from '../components/Burger.astro';
+import SlideMenu from '../components/SlideMenu.astro'
+import SocialIcons from '../components/SocialIcons.astro';
+import DarkToggle from '../components/DarkToggle.astro'
 ---
 
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>verup.work /projects</title>
+    <title>verup.work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=VT323&family=Major+Mono+Display&family=Instrument+Serif&display=swap" rel="stylesheet">
   </head>
-<body>
+<body class="px-0 md:px-80">
 
-  <a href="/" class="fixed top-5 left-5 text-sm cursor-pointer z-30 opacity-50 hover:opacity-100 transition-opacity">← Index</a>
+  <Burger />
+  <DarkToggle />
+  <SlideMenu />
+  <SocialIcons class="hidden md:grid fixed left-5 bottom-5 z-50" />
+
+  <script src="../scripts/menu.js"></script>
+
+  <a href="/" class="fixed md:top-20 md:left-5 bottom-4 left-4 md:text-heading text-body cursor-pointer z-30 hover-nudge-right">/ Index</a>
   <button id="proj-prev" class="fixed left-4 top-1/2 -translate-y-1/2 text-4xl cursor-pointer z-30">&lt;</button>
   <button id="proj-next" class="fixed right-4 top-1/2 -translate-y-1/2 text-4xl cursor-pointer z-30">&gt;</button>
-  <span id="project-counter" class="fixed bottom-4 left-1/2 -translate-x-1/2 text-sm opacity-50">1 / 8</span>
+  <span id="project-counter" class="z-30 fixed bottom-4 left-1/2 -translate-x-1/2 text-body">1 / 8</span>
 
   <div data-project="city" class="hidden"><CityFull /></div>
   <div data-project="shecanplay" class="hidden"><SheCanPlayFull /></div>
