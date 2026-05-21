@@ -15,7 +15,7 @@ if (isReload || isFirstVisit) {
 
 const SHOULD_SKIP = sessionStorage.getItem('intro-played') === 'true';
 
-const DEV = true;
+const DEV = false;
 if (DEV && !SHOULD_SKIP) {
   document.getElementById('ui')?.style.setProperty('opacity', '1');
   document.getElementById('intro-video')?.classList.remove('opacity-0');
