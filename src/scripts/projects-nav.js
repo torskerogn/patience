@@ -1,8 +1,7 @@
 const ORDER = [
-  'city', 'shecanplay', 'aaben', 'projmap',
-  'three', 'blender', 'gamedesign', 'motion',
+  'city', 'aaben', 'motion', 'blender',
+  'shecanplay', 'projmap', 'gamedesign', 'three',
 ];
-
 let current = 0;
 
 function show(index) {

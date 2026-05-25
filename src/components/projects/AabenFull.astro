@@ -6,10 +6,10 @@ import '../../styles/global.css';
 
     <h1 class="text-display md:my-5 my-2">ÅBEN Brewery</h1>
         
-    <div class="grid grid-cols-3 gap-4 md:my-16 my-5">
-        <img class="w-full object-cover rounded-lg" src="/images/aaben_shoot.png">
-        <img class="w-full object-cover rounded-lg" src="/images/Aaben/beers2.png">
-        <img class="w-full object-cover rounded-lg" src="/images/Aaben/beers3.png">
+    <div class="grid grid-cols-3 gap-4 w-full md:mb-28 mb-10">
+        <img class="fullSize w-full object-cover rounded-lg" src="/images/aaben_shoot.png">
+        <img class="fullSize w-full object-cover rounded-lg" src="/images/Aaben/beers2.png">
+        <img class="fullSize w-full object-cover rounded-lg" src="/images/Aaben/beers3.png">
     </div>
 
     <p class="text-display md:mt-20 mt-4 mb-4">The assignment</p>
@@ -17,7 +17,7 @@ import '../../styles/global.css';
     <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
         <p class="text-heading">The concept of a generator<span class="text-body"><br>My teacher, Stig – while beign a talented teacher, is also the biggest craft-beer enthusiast you can ever find. He reached out to ÅBEN Brewery and got talking with their communication-department. Upon learning it's one person doing all the graphics of SoMe, website, labels etc he offered them our skills – they accepted.<br><br>The focus of the assigment was to create a simple one-stop-solution for the creative department of ÅBEN Brewery. Something that maintains a design-system, while being open to change and editing.</span> </p>
         <div class="grid grid-cols-2 gap-4">
-            <img class="col-span-2 rounded-lg object-cover" src="/images/Aaben/Aaben-about.png">
+            <img class="fullSize col-span-2 rounded-lg object-cover" src="/images/Aaben/Aaben-about.png">
         </div>
 
     </div>
@@ -73,30 +73,35 @@ import '../../styles/global.css';
             ></iframe>
         </div>
 
-        <div class="md:hidden">
-            <video class="w-full object-cover rounded-lg" autoplay loop muted playsinline>
+<div class="md:hidden">
+            <video id="fast-video-2" class="w-full object-cover rounded-lg" autoplay loop muted playsinline>
                 <source src="/videos/Aaben-preview.mp4" type="video/mp4" />
                 <source src="/videos/Aaben-preview.webm" type="video/webm" />
-            </div>  
+            </video>
+            <script>
+                const video = document.getElementById('fast-video-2') as HTMLVideoElement;
+                if (video) video.playbackRate = 8;
+            </script>
+        </div>
             
             <p class="text-body text-xs mb-16 text-gray-400 md:hidden">The label generator is a desktop experience. Visit on a computer to try.</p>
     
     <p class="text-display md:mt-20 mt-4 mb-4">Final Products</p>
     <div class="grid grid-cols-2 gap-4">
-        <img class="rounded-lg object-cover" src="/images/aaben_shoot.png">
+        <img class="sm:fullSize rounded-lg object-cover" src="/images/aaben_shoot.png">
     
 
-        <div class="grid grid-cols-2 grid-rows-5 gap-4 mb-12">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Aecht.png">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Berries.png">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Bryg61.png">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Fluff.png">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Nightcap.png">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Plum.png">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Specular.png">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Stahlbaum.png">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/StoutImp.png">
-            <img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Y.png">
+        <div class="grid grid-cols-2 grid-rows-5 gap-1 mb-12">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Aecht.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Berries.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Bryg61.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Fluff.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Nightcap.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Plum.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Specular.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Stahlbaum.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/StoutImp.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Y.png">
         </div>
 
     </div>

@@ -1,3 +1,48 @@
-<div class="h-screen grid place-items-center">
-    <p class="text-4xl">ThreeFull</p>
+---
+import '../../styles/global.css';
+---
+
+<div class="px-4 md:px-0 bg-transparent mt-12 md:mt-28">
+
+    <h1 class="text-display md:my-5 my-2">Living room</h1>
+    
+    <div class="w-full md:mb-28 mb-10 hidden md:block">
+        <a href="https://musicisland.netlify.app/" target="_blank"><img class="w-full object-cover rounded-lg transition-all duration-300 hover:scale-95 hover:brightness-75" src="/images/musicisland.png"></a>            <p class="py-2 text-sm opacity-50 hidden md:block">Click on image to try it out</p>
+    </div>
+
+    <div class="w-full md:mb-28 mb-10 md:hidden">
+        <img class="w-full object-cover rounded-lg" src="/images/musicisland.png">
+        <p class="py-2 text-xs opacity-50">Only available to try an desktop</p>
+    </div>
+
+    <p class="text-heading">Three.js</p>
+    <div class="grid grid-cols-3 gap-4 mb-12">
+        <p class="text-body">An assignment meant to challenge our 3D-skills, whilst also learning and implementing with Three.js.</p>
+        <img class="w-full aspect-square object-contain" src="/images/Three.js/blender-logo.png">
+        <img class="w-full aspect-square object-contain" src="/images/Three.js/three.js-logo.png">
+    </div>
+
+    <p class="text-heading">The brief</p>
+    
+    <div class="grid md:grid-cols-3 gap-4 mb-12">
+        <p class="text-body">The brief was to make an interactive music video. Song choice was our own. So naturally, with my background in music production, I chose to make my own song in Logic Pro X. I divided each of the 6 segment of the song: kick, snare, percussion, bass, synth and effects into individual audio tracks. With that in mind I built my model of the living room, with a small radio that had 6 buttons – one for each instrument.</p>
+        <div class="grid grid-cols-2 col-span-2 gap-4">
+        <img class="fullSize rounded-lg col-span-1" src="/images/Three.js/logic.png">
+        <img class="fullSize rounded-lg col-span-1" src="/images/Three.js/three-1.png">
+        <img class="fullSize w-full rounded-lg col-span-2" src="/images/Three.js/three-3.png">
+        </div>
+    </div>
+    
+    <p class="text-heading">Click it!</p>
+
+    <div class="grid grid-cols-2 gap-4 mb-12">
+        <p class="text-body">Each button is hooked up to a specific part of the track. When one button is pressed initially, all of the tracks start muted. Then as you click or – “un-mute”, the track plays in time with each other. </p>
+         <img class="fullSize rounded-lg" src="/images/Three.js/three-2.png">
+    </div>
+
+    <p class="text-heading">It’s about the music</p>
+    <p class="text-body mb-24">My goal was to create an interactive experience, not so much with the visuals, but with the music. With my background in music I found that approach more entertaining. <span class="hidden md:block text-body"><br><br>To try it out yourself, click the image in the top, or the link below:</span></p>
+    <a href="https://musicisland.netlify.app/" target="_blank">
+        <div class="hidden md:block text-heading text-center mt-12 mb-24 border-dark dark:border-light border-4 hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark md:mx-[24rem] p-4 rounded-lg cursor-pointer transition-colors duration-300">Try me!</div>
+    </a>
 </div>
