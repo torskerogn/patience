@@ -187,7 +187,7 @@ new p5((p) => {
 
     const img = new Image();
     img.onload = () => { qrImage = img; };
-    img.src = '/icons/QR.svg';
+    img.src = '/icons/QR-2.svg';
 
     document.addEventListener('mousemove', handleMove);
 
