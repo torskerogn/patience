@@ -1,23 +1,123 @@
 ---
 import '../styles/global.css';
+import Burger from '../components/Burger.astro';
+import SlideMenu from '../components/SlideMenu.astro';
+import SocialIcons from '../components/SocialIcons.astro';
+import DarkToggle from '../components/DarkToggle.astro';
 ---
 
-<html lang="en">
+<html lang="en" class="overscroll-none">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>verup.work /about</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=VT323&family=Major+Mono+Display&family=Instrument+Serif&display=swap" rel="stylesheet">
   </head>
-<body>
+<body class="px-0 md:px-80 2xl:px-[600px]">
 
-  <a href="/" class="fixed top-5 left-5 text-sm cursor-pointer z-30 opacity-50 hover:opacity-100 transition-opacity">← Index</a>
-    <div class="h-screen grid place-items-center">
-        <p class="text-4xl">About</p>
+  <Burger />
+  <DarkToggle />
+  <SlideMenu />
+  <SocialIcons class="hidden md:grid fixed left-5 bottom-5 z-50" />
+
+  <script src="../scripts/menu.js"></script>
+
+  <a href="/" class="fixed md:top-20 md:left-5 bottom-4 left-4 md:text-heading text-body cursor-pointer z-30 hover-nudge-right">/ Index</a>
+
+  <!-- Your about content goes here -->
+  <div class="px-4 md:px-0 mt-12 md:mt-28">
+    <p class="text-display mb-8">A bit about me</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+          <img class="rounded-lg w-full" src="/images/About/about-alpaca-1.png">
+          <div>
+            <div class="md:mb-16 mb-8">
+              <p class="text-heading mb-4 flex justify-between">Name<span class="font-thin">Valdemar Bojer Verup</span></p>
+              <p class="text-heading mb-4 flex justify-between">Age<span class="font-thin">26 years old</span></p>
+              <p class="text-heading mb-4 flex justify-between">Location<span class="font-thin">Nørrebro, Copenhagen</span></p>
+            </div>
+
+            <div class="md:mb-16 mb-8">
+              <p class="text-heading mb-4 flex justify-between">Education<span class="font-thin">DMJX</span></p>
+              <p class="text-heading mb-4 flex justify-between">Bachelor<span class="font-thin">Visual Communication</span></p>
+              <p class="text-heading mb-4 flex justify-between">Class<span class="font-thin">Coded Design</span></p>
+            </div>
+
+            <div class="md:mb-16">
+              <p class="text-heading mb-4 flex justify-between">Love<span class="font-thin">Cats</span></p>
+              <p class="text-heading mb-4 flex justify-between">Hate<span class="font-thin">Heights</span></p>
+              <p class="text-heading mb-4 flex justify-between">Eager to<span class="font-thin">Learn</span></p>
+            </div>
+          </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-12">
+      <div class="md:col-span-2">
+        <p class="text-heading">Wtf is Coded Design?</p>
+        <p class="text-body">When you choose to study Visual Communication at Danish School of Media and Journalism, you're choosing between three differnet directions. One of those is <span class="font-bold">Coded Design.</span> <br><br> Its a newly implemented version of Visual Communication, where the goal is to form a bridge between a designer and a developer. Read more <a href="https://www.dmjx.dk/uddannelser/visuel-kommunikation" target="_blank" class="underline font-bold">here</a><br><br>That means I have skills in <span class="font-bold">color, form, typography</span> and other traditional design-aspects but at the same time also <span class="font-bold">HTML, JavaScript, CSS, p5.js, 3D</span> and many more.</p>
+      </div>
+      <img class="rounded-lg w-full fullSize" src="/images/About/about-me-1.png">
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-4">
+      
+      <div class="">
+        <p class="text-heading">My past life</p>
+        <p class="text-body">I used to have a life as a full time Copenhagen restaurant-dude. I worked in two different latin-american restaurants as waiter, bartender, manager, dishwasher etc. It shaped me in a way I could never imagine. <br><br>I learned to <span class="font-bold">communicate</span> well under pressure, but also to be aware of my limits – and thereby plan for when it goes wrong. It also allowed me the privilige to work with <span class="font-bold">people from all over the world</span>, and learn about their food, culture and history.</p>
+      </div>
+
+      <img class="rounded-lg w-full fullSize" src="/images/About/about-me-3.png">
+
+      
+      
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-4 mb-4">
+      <div class="col-span-2 grid grid-cols-2 gap-4 order-2 md:order-1">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-food-1.png">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-food-2.png">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-food-3.png">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-food-4.png">
+      </div>
+
+        <p class="text-body col-span-2 order-1 md:order-2">Besides the opportunity to work, it also got me really interested in food. I <span class="font-bold">never ever</span> order takeaway or "easy" food. You'll always find me creating something in the kitchen. Whether its fileting a full fish to make ceviche, or extracting chlorophyll from chives to make a green oil, I'm always happy. I bake my own bread too.</p>
+
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <p class="text-heading">The Navy</p>
+        <p class="text-body">In 2022 i went through basic training (værnepligt) in the Royal Danish Navy. It was probaply amongst some of the hardest things i ever did. I learned a lot about myself, how I contribute to group-work and how I react under real extreme pressure.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-navy-1.png">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-navy-3.png">
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div class="grid grid-cols-2 gap-4 order-2 md:order-1">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-cat-1.png">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-cat-2.png">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-cat-5.png">
+        <img class="rounded-lg w-full fullSize" src="/images/About/about-cat-4.png">
+      </div>
+      <div class="order-1 md:order-2">
+        <p class="text-heading">Cats</p>
+        <p>Cats have always been a part of my life. I grew up with them, and always seem to find one on the street to pet. No matter how dirty. I like dogs too – just not as much as cats. There is something about them that's easy to love. They're independent. They do whatever they want. If they like you, it feels like you've been chosen.</p>
+      </div>
+    </div>
+
+    <div class="text-center mb-12">
+      <p class="text-body mb-4">Want to know more?</p>
+      <a href="/contact">
+        <p class="text-heading border-dark dark:border-light border-4 hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark md:mx-[24rem] p-4 rounded-lg cursor-pointer transition-colors duration-300">Contact me</p>
+      </a>
     </div>
 
   <script>
-    import '../scripts/projects-nav.js';
+    import '../scripts/fullSize.js';
   </script>
-
-</body>
-</html>
+    
+  </body>
+  </html>

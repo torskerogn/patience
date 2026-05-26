@@ -1,23 +1,33 @@
 ---
 import '../styles/global.css';
+import Burger from '../components/Burger.astro';
+import SlideMenu from '../components/SlideMenu.astro';
+import SocialIcons from '../components/SocialIcons.astro';
+import DarkToggle from '../components/DarkToggle.astro';
 ---
 
-<html lang="en">
+<html lang="en" class="overscroll-none">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>verup.work /contact</title>
+    <title>verup.work /about</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=VT323&family=Major+Mono+Display&family=Instrument+Serif&display=swap" rel="stylesheet">
   </head>
-<body>
+<body class="px-0 md:px-80 2xl:px-[600px]">
 
-  <a href="/" class="fixed top-5 left-5 text-sm cursor-pointer z-30 opacity-50 hover:opacity-100 transition-opacity">← Index</a>
-    <div class="h-screen grid place-items-center">
-        <p class="text-4xl">Contact</p>
-    </div>
+  <Burger />
+  <DarkToggle />
+  <SlideMenu />
+  <SocialIcons class="hidden md:grid fixed left-5 bottom-5 z-50" />
 
-  <script>
-    import '../scripts/projects-nav.js';
-  </script>
+  <script src="../scripts/menu.js"></script>
 
+  <a href="/" class="fixed md:top-20 md:left-5 bottom-4 left-4 md:text-heading text-body cursor-pointer z-30 hover-nudge-right">/ Index</a>
+
+  <div class="h-screen grid place-items-center text-center">
+      <p class="text-4xl">valdemar@verup.biz <br><br>+4530492005</p>
+  </div>
 </body>
 </html>
+
+

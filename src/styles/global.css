@@ -14,6 +14,15 @@
   font-display: swap;
 }
 
+#scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+#scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .glitch-hover {
   white-space: nowrap;
   overflow: hidden;
