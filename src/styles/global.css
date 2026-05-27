@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Montserrat';
   src: url('/fonts/Montserrat-Variable.ttf') format('truetype');
   font-weight: 100 900;
@@ -9,6 +9,22 @@
 @font-face {
   font-family: 'Montserrat';
   src: url('/fonts/Montserrat-VariableItalic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-VariableItalic.ttf') format('truetype');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -72,7 +88,7 @@
 
 @layer components {
   .text-display {
-    @apply font-black italic text-3xl md:text-8xl leading-tight;
+    @apply font-black text-3xl md:text-6xl leading-tight;
   }
 
   .text-heading {
@@ -80,14 +96,14 @@
   }
 
   .text-body {
-    @apply font-normal text-sm md:text-lg leading-relaxed;
+    @apply font-normal text-sm md:text-xl leading-loose;
   }
 }
 
 @layer base {
   html {
     color-scheme: light;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Archivo', sans-serif;
   }
   body, a, button, label, nav, div, p, h1, h2, h3, span {
     @apply transition-colors duration-300;

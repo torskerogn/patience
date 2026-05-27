@@ -1,6 +1,6 @@
 const ORDER = [
   'city', 'aaben', 'motion', 'blender',
-  'shecanplay', 'projmap', 'gamedesign', 'three',
+  'shecanplay', 'projmap',
 ];
 let current = 0;
 
@@ -23,7 +23,15 @@ function init() {
     show((current - 1 + ORDER.length) % ORDER.length);
   });
 
+  document.getElementById('proj-prev-laptop').addEventListener('click', () => {
+    show((current - 1 + ORDER.length) % ORDER.length);
+  });
+
   document.getElementById('proj-next').addEventListener('click', () => {
+    show((current + 1) % ORDER.length);
+  });
+
+  document.getElementById('proj-next-laptop').addEventListener('click', () => {
     show((current + 1) % ORDER.length);
   });
 

@@ -41,6 +41,19 @@ new p5((p) => {
     ];
   }
 
+  function drawInitialText() {
+    pg.push();
+    pg.fill(pg.drawingContext.fillStyle);
+    const isDark = document.documentElement.classList.contains('dark');
+    pg.fill(isDark ? 255 : 0);
+    pg.noStroke();
+    pg.textAlign(p.CENTER, p.CENTER);
+    pg.textSize(14);
+    pg.textFont('Archivo');
+    pg.text('console.log\n(activity)', pg.width / 2, pg.height / 2);
+    pg.pop();
+  }
+
   function snapDir(dx, dy) {
     let best = 0, bestDot = -Infinity;
     const len = Math.sqrt(dx * dx + dy * dy) || 1;
@@ -146,13 +159,13 @@ new p5((p) => {
 
     const textX = 70;
     ctx.fillStyle = '#212121';
-    ctx.font = 'bold italic 16px Montserrat, sans-serif';
+    ctx.font = 'bold 16px Archivo';
     ctx.fillText('Valdemar Verup', textX, y + 22);
-    ctx.font = '12px Montserrat, sans-serif';
+    ctx.font = '9px Archivo';
     ctx.fillText('Coded Design, DMJX', textX, y + 38);
-    ctx.font = '9px Montserrat, sans-serif';
-    ctx.fillText('+45 3049 2005', textX, y + 54);
-    ctx.fillText('valdemar@verup.biz', textX + 68, y + 54);
+    ctx.font = '9px Archivo';
+    ctx.fillText('+4530492005', textX, y + 54);
+    ctx.fillText('valdemar@verup.biz', textX + 60, y + 54);
   }
 
   function matchVideoHeight() {
@@ -183,11 +196,12 @@ new p5((p) => {
       const isDark = document.documentElement.classList.contains('dark');
       pg.background(isDark ? 29 : 255);
       drawX = w / 2; drawY = h / 2;
+      drawInitialText();
     }
 
     const img = new Image();
     img.onload = () => { qrImage = img; };
-    img.src = '/icons/QR-2.svg';
+    img.src = '/icons/qr-new.svg';
 
     document.addEventListener('mousemove', handleMove);
 
@@ -201,8 +215,9 @@ new p5((p) => {
     const collapseBtn = document.getElementById('pipe-collapse');
     const wrapper = document.getElementById('pipe-wrapper');
     if (collapseBtn && wrapper) {
-      wrapper.classList.add('translate-x-[calc(100%-24px)]')
-      collapseBtn.textContent = '<'
+      // Removed the two lines that collapsed it on load:
+      // wrapper.classList.add('translate-x-[calc(100%-24px)]')
+      // collapseBtn.textContent = '<'
 
       collapseBtn.addEventListener('click', () => {
         wrapper.classList.toggle('translate-x-[calc(100%-24px)]');

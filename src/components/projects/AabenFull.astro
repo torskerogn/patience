@@ -2,38 +2,76 @@
 import '../../styles/global.css';
 ---
 
-<div class="px-4 md:px-0 bg-transparent mt-12 md:mt-28">
+<div class="px-4 md:px-0 bg-transparent mt-12 md:mt-28 mb-48">
 
-    <h1 class="text-display md:my-5 my-2">ÅBEN Brewery</h1>
+    <h1 class="text-display md:my-5 my-2">ÅBEN Brewery – Label generator</h1>
         
-    <div class="grid grid-cols-3 gap-4 w-full md:mb-28 mb-10">
-        <img class="fullSize w-full object-cover rounded-lg" src="/images/aaben_shoot.png">
-        <img class="fullSize w-full object-cover rounded-lg" src="/images/Aaben/beers2.png">
-        <img class="fullSize w-full object-cover rounded-lg" src="/images/Aaben/beers3.png">
+<img class="rounded-lg object-cover" src="/images/Aaben/færdige_labels/Specular.png">
+
+<p class="text-heading md:mt-40 mt-20 mb-4">Final Product</p>
+    <div class="grid grid-cols-2 gap-4">
+        <img class="rounded-lg h-full object-cover" src="/images/aaben_shoot.png">
+    
+
+        <div class="grid grid-cols-2 grid-rows-5 gap-4 mb-12 h-full">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Aecht.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Berries.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Bryg61.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Fluff.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Nightcap.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Plum.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Specular.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Stahlbaum.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/StoutImp.png">
+            <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Y.png">
+        </div>
+
     </div>
 
-    <p class="text-display md:mt-20 mt-4 mb-4">The assignment</p>
+    <p class="text-heading md:mt-40 mt-20 mb-4">The generator</p>
+    
+    <p class="text-body mb-4 md:mb-0 leading-loose">The generator is made with p5.js. The user is able to create the pattern they want within my design-system using sliders that control the cell size, noise and stroke-size. I applied a minimum and a maximum for each slider, so that the design-system doesn't fade. User can also change colors, write textfields, edit the pattern or have the option to click "RANDOM" until a desireable pattern shows. At the end of the process, you can export the canvas as a png<span class="hidden md:block text-heading mb-4"> <br><br> Try it out for yourself below:</span> </p>
+    
+        <div class="hidden md:block w-full mb-10 rounded-lg overflow-hidden" style="aspect-ratio: 16/9;">
+            <iframe 
+                src="https://aaben-labelgenerator.netlify.app/" 
+                class="w-full h-full border-0"
+                loading="lazy"
+            ></iframe>
+        </div>
 
-    <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-        <p class="text-heading">The concept of a generator<span class="text-body"><br>My teacher, Stig – while beign a talented teacher, is also the biggest craft-beer enthusiast you can ever find. He reached out to ÅBEN Brewery and got talking with their communication-department. Upon learning it's one person doing all the graphics of SoMe, website, labels etc he offered them our skills – they accepted.<br><br>The focus of the assigment was to create a simple one-stop-solution for the creative department of ÅBEN Brewery. Something that maintains a design-system, while being open to change and editing.</span> </p>
+<div class="md:hidden">
+    <img class="rounded-lg object-cover" src="/images/Aaben/Aaben-generator.png">
+        </div>
+            
+            <p class="text-body text-xs mb-16 text-gray-400 md:hidden">The label generator is a desktop experience. Visit on a computer to try.</p>
+
+    
+
+    
+
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-4 md:mt-40 mt-20 mb-4">
+        <p class="text-heading leading-relaxed">The concept of a generator<span class="text-body"><br>My teacher, Stig – while beign a talented teacher, is also the biggest craft-beer enthusiast you can ever find. He reached out to ÅBEN Brewery and got talking with their communication-department. Upon learning it's one person doing all the graphics of SoMe, website, labels etc he offered them our skills – they accepted.<br><br>The focus of the assigment was to create a simple one-stop-solution for the creative department of ÅBEN Brewery. Something that maintains a design-system, while being open to change and editing.</span> </p>
         <div class="grid grid-cols-2 gap-4">
             <img class="fullSize col-span-2 rounded-lg object-cover" src="/images/Aaben/Aaben-about.png">
         </div>
 
     </div>
 
-    <p class="text-display md:mt-20 mt-4 mb-4">Molecules</p>
+
+
+
     
-    <div class="grid md:grid-cols-2 gap-4 mb-20">
-        <p class="text-body"><span class="text-heading">The chemistry of craft beer</span> <br>After my teacher, Stig's passionate presentation about craft beer, I was very fascinated by the amount of detail in the chemistry of craft beer. The attention to detail required to acheive certain flavours or types of beer, was very impressive to me. <br><br> This was my direction. Molecules, blobs, chemistry.</p>
+    <div class="grid md:grid-cols-2 gap-4  md:mt-40 mt-20 mb-4">
+        <p class="text-heading leading-relaxed">The chemistry of craft beer<span class="text-body leading-relaxed"><br>After my teacher, Stig's passionate presentation about craft beer, I was very fascinated by the amount of detail in the chemistry of craft beer. The attention to detail required to acheive certain flavours or types of beer, was very impressive to me. <br><br> This was my direction. Molecules, blobs, chemistry.</span> </p>
         <div class="grid grid-cols-2 gap-4">
             <img class="object-contain rounded-xl" src="/images/Aaben/Aaben-molecule.png">
             <img class="object-contain rounded-xl" src="/images/Aaben/Aaben-concept.png">
         </div>
     </div>
 
-    <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-        <p class="text-heading">Marching squares <span class="text-body"><br>Marching Squares is a computer graphics algorithm that converts a 2D grid of numerical values into smooth outline shapes or contour lines. <br><br> In the case of my label-generator I wanted to use this algorithm to acheive my molecule-look</span> </p>
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-4 md:mt-40 mt-20 mb-24">
+        <p class="text-heading leading-relaxed">The chemistry of craft beer<span class="text-body leading-relaxed"><br>After my teacher, Stig's passionate presentation about craft beer, I was very fascinated by the amount of detail in the chemistry of craft beer. The attention to detail required to acheive certain flavours or types of beer, was very impressive to me. <br><br> This was my direction. Molecules, blobs, chemistry.</span> </p>
         <div class="grid grid-cols-2 gap-4">
             <img src="/images/Aaben/Aaben-MS-1.png">
             <img src="/images/Aaben/Aaben-MS-2.png">
@@ -61,7 +99,7 @@ import '../../styles/global.css';
 
 
     
-    <p class="text-display md:mt-20 mt-4 mb-4">The generator</p>
+    <!-- <p class="text-display md:mt-20 mt-4 mb-4">The generator</p>
     
     <p class="text-body mb-4 md:mb-0">The generator is made with p5.js. The user is able to create the pattern they want within my design-system using sliders that control the cell size, noise and stroke-size. I applied a minimum and a maximum for each slider, so that the design-system doesn't fade. User can also change colors, write textfields, edit the pattern or have the option to click "RANDOM" until a desireable pattern shows. At the end of the process, you can export the canvas as a png<span class="hidden md:block text-heading"> <br><br> Try it out for yourself below:</span> </p>
     
@@ -84,9 +122,9 @@ import '../../styles/global.css';
             </script>
         </div>
             
-            <p class="text-body text-xs mb-16 text-gray-400 md:hidden">The label generator is a desktop experience. Visit on a computer to try.</p>
+            <p class="text-body text-xs mb-16 text-gray-400 md:hidden">The label generator is a desktop experience. Visit on a computer to try.</p> -->
     
-    <p class="text-display md:mt-20 mt-4 mb-4">Final Products</p>
+    <!-- <p class="text-display md:mt-20 mt-4 mb-4">Final Products</p>
     <div class="grid grid-cols-2 gap-4">
         <img class="sm:fullSize rounded-lg object-cover" src="/images/aaben_shoot.png">
     
@@ -104,7 +142,7 @@ import '../../styles/global.css';
             <img class="fullSize rounded-lg object-cover" src="/images/Aaben/færdige_labels/Y.png">
         </div>
 
-    </div>
+    </div> -->
 
 
         

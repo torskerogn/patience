@@ -9,6 +9,7 @@ import BlenderFull from '../components/projects/BlenderFull.astro';
 import GameDesignFull from '../components/projects/GameDesignFull.astro';
 import MotionFull from '../components/projects/MotionFull.astro';
 
+import FadeOverlay from '../components/FadeOverlay.astro';
 import Burger from '../components/Burger.astro';
 import SlideMenu from '../components/SlideMenu.astro'
 import SocialIcons from '../components/SocialIcons.astro';
@@ -28,13 +29,19 @@ import DarkToggle from '../components/DarkToggle.astro'
   <DarkToggle />
   <SlideMenu />
   <SocialIcons class="hidden md:grid fixed left-5 bottom-5 z-50" />
+  <FadeOverlay />
 
   <script src="../scripts/menu.js"></script>
 
-  <a href="/" class="fixed md:top-20 md:left-5 bottom-4 left-4 md:text-heading text-body cursor-pointer z-30 hover-nudge-right">/ Index</a>
-  <button id="proj-prev" class="fixed left-4 top-1/2 -translate-y-1/2 text-4xl cursor-pointer z-30">&lt;</button>
-  <button id="proj-next" class="fixed right-4 top-1/2 -translate-y-1/2 text-4xl cursor-pointer z-30">&gt;</button>
-  <span id="project-counter" class="z-30 fixed bottom-4 left-1/2 -translate-x-1/2 text-body">1 / 8</span>
+  <a href="/" class="fixed md:top-6 md:left-32 bottom-4 left-4 text-heading cursor-pointer z-30 hover-nudge-right">Back to Index</a>
+
+  <button id="proj-prev" class="fixed left-44 bottom-1 -translate-y-1/2 text-heading cursor-pointer z-30 md:hidden">&lt;</button>
+  <button id="proj-prev-laptop" class="fixed right-[calc(50%+10rem)] bottom-0 -translate-y-1/2 text-heading cursor-pointer z-30 hidden md:block hover:-translate-x-2 transition-transform duration-300">&lt; previous</button>
+
+  <button id="proj-next" class="fixed right-44 bottom-1 -translate-y-1/2 text-heading cursor-pointer z-30 md:hidden">&gt;</button>
+  <button id="proj-next-laptop" class="fixed left-[calc(50%+10rem)] bottom-0 -translate-y-1/2 text-heading cursor-pointer z-30 hidden md:block hover:translate-x-2 transition-transform duration-300">next &gt;</button>
+  
+  <span id="project-counter" class="z-30 fixed bottom-4 left-1/2 -translate-x-1/2 text-heading">1 / 8</span>
 
   <div data-project="city" class="hidden"><CityFull /></div>
   <div data-project="aaben" class="hidden"><AabenFull /></div>
@@ -42,8 +49,8 @@ import DarkToggle from '../components/DarkToggle.astro'
   <div data-project="blender" class="hidden"><BlenderFull /></div>
   <div data-project="shecanplay" class="hidden"><SheCanPlayFull /></div>
   <div data-project="projmap" class="hidden"><ProjMapFull /></div>
-  <div data-project="gamedesign" class="hidden"><GameDesignFull /></div>
-  <div data-project="three" class="hidden"><ThreeFull /></div>
+  <!-- <div data-project="gamedesign" class="hidden"><GameDesignFull /></div>
+  <div data-project="three" class="hidden"><ThreeFull /></div> -->
 
   <script>
     import '../scripts/projects-nav.js';

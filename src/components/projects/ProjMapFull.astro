@@ -2,12 +2,25 @@
 import '../../styles/global.css';
 ---
 
-<div class="px-4 md:px-0 bg-transparent mt-12 md:mt-28">
+<div class="px-4 md:px-0 bg-transparent mt-12 md:mt-28 mb-48">
 
     <h1 class="text-display md:my-5 my-2">Træet<span class="font-extralight italic"> / The Tree</span></h1>
         
-    <div class="grid md:grid-cols-4 grid-cols-2 gap-4 w-full mb-10">
-        <img class="w-full object-cover rounded-lg hidden md:block" src="/images/ProjMap/projmap5.png">
+    <div class="grid grid-cols-2 gap-4 w-full mb-10">
+
+        <div>
+            <video class="w-full aspect-square object-cover rounded-lg" autoplay loop muted playsinline>
+                <source src="/videos/projmap1.mp4" type="video/mp4" />
+                <source src="/videos/projmap1.webm" type="video/webm" />
+        </div>
+
+        <div>
+            <video class="w-full aspect-square object-cover rounded-lg" autoplay loop muted playsinline>
+                <source src="/videos/projmap7.mp4" type="video/mp4" />
+                <source src="/videos/projmap7.webm" type="video/webm" />
+        </div>
+
+        <!-- <img class="w-full object-cover rounded-lg hidden md:block" src="/images/ProjMap/projmap5.png">
 
         <img class="w-full object-cover rounded-lg hidden md:block" src="/images/ProjMap/projmap3.png">
 
@@ -15,83 +28,12 @@ import '../../styles/global.css';
             <video class="w-full object-cover rounded-lg" autoplay loop muted playsinline>
                 <source src="/videos/projmap1.mp4" type="video/mp4" />
                 <source src="/videos/projmap1.webm" type="video/webm" />
-        </div>
+        </div> -->
 
-        <img class="w-full object-cover rounded-lg" src="/images/ProjMap/projmap10.png">
+        <!-- <img class="w-full object-cover rounded-lg" src="/images/ProjMap/projmap10.png"> -->
     </div>
 
-    <p class="text-display md:mt-44 mt-4 mb-4">Tech and nature</p>
-
-    <div class="grid md:grid-cols-2 gap-4 mb-10">
-        <div class="">
-            <p class="text-heading">To use projection mapping as a communicative tool</p>
-            <p class="text-body">The assignment was to find a client or an organization, who has a central message. Come up with an idea, that through projection mapping, communicates a message in line with the organization picked. <br><br>My group and all wanted to build something with our hands. Get dirty and craft something. So we started with the idea of a tree.</p>
-            
-        </div>
-        
-        <img class="w-full object-cover rounded-lg" src="/images/ProjMap/projmap6.png">
-
-    </div>
-
-    
-    <div class="grid md:grid-cols-2 gap-4  mb-10">
-        <div class="">
-            <p class="text-heading">The client</p>
-            <p class="text-body">We brainstormed upon our idea, and zeroed in our client being Democracy X. Democracy X is an institution that is the remnants of 'Teknologirådet' and 'DeltagerDanmark' put together. Their focus points are technology, society and sustainability.</p>
-            
-        </div>
-        
-        <a href="https://www.democracyx.dk/" target="_blank" ><img class="transition-all duration-300 hover:scale-95 hover:brightness-75 py-8 w-full object-cover rounded-lg bg-white" src="/images/ProjMap/democracyX.png"></a>
-
-    </div>
-
-    <p class="text-heading">The build</p>
-    
-    <p class="text-body mb-4">With a structure of cardboard, wire, tinfoil, newspapers, glue and other things we could find our tree was ready to be painted white. We 3D-scanned it and went digital from there.</p>
-        
-        <div class="grid md:grid-cols-3 gap-4 mb-10">
-            <img class="md:h-[40rem] object-cover rounded-lg" src="/images/ProjMap/projmap5.png">
-            <img class="md:h-[40rem] object-cover rounded-lg" src="/images/ProjMap/projmap3.png">
-            
-            <div>
-                <video class="md:h-[40rem] object-cover rounded-lg" autoplay loop muted playsinline>
-                    <source src="/videos/projmap11.mp4" type="video/mp4" />
-                    <source src="/videos/projmap11.webm" type="video/webm" />
-            </div>
-        </div>
-    
-    <p class="text-display md:mt-10 mt-4 mb-4">TouchDesigner</p>
-
-    <div class="grid md:grid-cols-3 grid-cols-2 gap-4 mb-10">
-        <div class="col-span-3 md:col-span-1">
-            <p class="text-heading">A new experience</p>
-            <p class="text-body">Working in TouchDesigner was a first for everyone in my group, including myself. But through trial and error, we took our 3d model of the tree, extracted coordinates and set up a particle simulation.</p>
-            
-        </div>
-
-            <div>
-                <video class="md:h-[41rem] h-[28rem] object-cover rounded-lg" autoplay loop muted playsinline>
-                <source src="/videos/projmap14.mp4" type="video/mp4" />
-                <source src="/videos/projmap14.webm" type="video/webm" />
-            </div>
-
-            <div>
-                <video class="md:h-[41rem] h-[28rem] object-cover rounded-lg" autoplay loop muted playsinline>
-                <source src="/videos/projmap2.mp4" type="video/mp4" />
-                <source src="/videos/projmap2.webm" type="video/webm" />
-            </div>
-        </div>
-
-
-        <p class="text-heading">Interactivity</p>
-        <div class="grid md:grid-cols-6">
-            <p class="text-body col-span-2">To emphasize the message behind Democracy X, we wanted to narrow down our idea:</p>
-            <p class="col-span-3 md:col-start-4 md:mt-0 mt-4 italic font-thin justify-self-center md:text-4xl text-xl text-center">"By not using AI and tech – nature revives"</p>
-        </div>
-
-        <p class="mt-4 md:mt-12 text-body">This then became the central theme for the project and the foundation of our interactive element. A key on a MIDI-keyboard became the symbol of technology's interference with nature.</p>
-        
-        <div class="grid grid-cols-2 gap-4 mt-4 md:mt-12 ">
+    <div class="grid grid-cols-2 gap-4 md:mt-40 mt-20">
         <p><span class="text-body font-bold">When pressed</span> – the tree grows mroe digital and corrupted, slowly turning into a digital dystopia of a tree.</p>
         <p><span class="text-body font-bold">Not pressed</span> – the tree slowly goes back through its original stages, and returns to being a functional, living and breathing organism.</p>
         </div>
@@ -124,7 +66,107 @@ import '../../styles/global.css';
 
         </div>
 
-        <p class="text-heading mb-4">More images froom the process:</p>
+    <p class="text-heading md:mt-44 mt-4 mb-4">To use projection mapping as a communicative tool</p>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-10">
+            <p class="text-body leading-relaxed">The assignment was to find a client or an organization, who has a central message. Come up with an idea, that through projection mapping, communicates a message in line with the organization picked. <br><br>My group and all wanted to build something with our hands. Get dirty and craft something. So we started with the idea of a tree.</p>
+            
+        
+        
+        <img class="w-full object-cover rounded-lg" src="/images/ProjMap/projmap6.png">
+
+    </div>
+
+    
+    <p class="text-heading">The client</p>
+    <div class="grid md:grid-cols-2 gap-4  mb-10">
+        <div class="">
+            <p class="text-body leading-relaxed">We brainstormed upon our idea, and zeroed in our client being Democracy X. Democracy X is an institution that is the remnants of 'Teknologirådet' and 'DeltagerDanmark' put together. Their focus points are technology, society and sustainability.</p>
+            
+        </div>
+        
+        <a href="https://www.democracyx.dk/" target="_blank" ><img class="transition-all duration-300 hover:scale-95 hover:brightness-75 py-8 w-full object-cover rounded-lg bg-white" src="/images/ProjMap/democracyX.png"></a>
+
+    </div>
+
+    <p class="text-heading">The build</p>
+    
+    <p class="text-body mb-4 leading-relaxed">With a structure of cardboard, wire, tinfoil, newspapers, glue and other things we could find our tree was ready to be painted white. We 3D-scanned it and went digital from there.</p>
+        
+        <div class="grid md:grid-cols-3 gap-4 mb-10">
+            <img class="md:h-[40rem] object-cover rounded-lg" src="/images/ProjMap/projmap5.png">
+            <img class="md:h-[40rem] object-cover rounded-lg" src="/images/ProjMap/projmap3.png">
+            
+            <div>
+                <video class="md:h-[40rem] object-cover rounded-lg" autoplay loop muted playsinline>
+                    <source src="/videos/projmap11.mp4" type="video/mp4" />
+                    <source src="/videos/projmap11.webm" type="video/webm" />
+            </div>
+        </div>
+
+        <p class="text-heading">A new experience</p>
+    <div class="grid md:grid-cols-3 grid-cols-2 gap-4 mb-10">
+        <div class="col-span-3 md:col-span-1">
+            <p class="text-body leading-relaxed">Working in TouchDesigner was a first for everyone in my group, including myself. But through trial and error, we took our 3d model of the tree, extracted coordinates and set up a particle simulation.</p>
+            
+        </div>
+
+            <div>
+                <video class="md:h-[41rem] h-[28rem] object-cover rounded-lg" autoplay loop muted playsinline>
+                <source src="/videos/projmap14.mp4" type="video/mp4" />
+                <source src="/videos/projmap14.webm" type="video/webm" />
+            </div>
+
+            <div>
+                <video class="md:h-[41rem] h-[28rem] object-cover rounded-lg" autoplay loop muted playsinline>
+                <source src="/videos/projmap2.mp4" type="video/mp4" />
+                <source src="/videos/projmap2.webm" type="video/webm" />
+            </div>
+        </div>
+
+
+        <p class="text-heading">Interactivity</p>
+        <div class="grid md:grid-cols-6">
+            <p class="text-body col-span-2 leading-relaxed">To emphasize the message behind Democracy X, we wanted to narrow down our idea:</p>
+            <p class="col-span-3 md:col-start-4 md:mt-0 mt-4 italic font-thin justify-self-center md:text-4xl text-xl text-center">"By not using AI and tech – nature revives"</p>
+        </div>
+
+        <p class="mt-4 md:mt-12 text-body leading-relaxed mb-12">This then became the central theme for the project and the foundation of our interactive element. A key on a MIDI-keyboard became the symbol of technology's interference with nature.</p>
+        
+        <!-- <div class="grid grid-cols-2 gap-4 mt-4 md:mt-12 ">
+        <p><span class="text-body font-bold">When pressed</span> – the tree grows mroe digital and corrupted, slowly turning into a digital dystopia of a tree.</p>
+        <p><span class="text-body font-bold">Not pressed</span> – the tree slowly goes back through its original stages, and returns to being a functional, living and breathing organism.</p>
+        </div>
+
+        <div class="grid grid-cols-2 grid-rows-2 gap-4 mt-4 md:mt-4 mb-12">
+            <div class="w-full aspect-square rounded-lg bg-cover bg-center flex items-end" style="background-image: url('/images/ProjMap/projmap-sq3.png');">
+                <p class="text-sm text-light w-full p-4 rounded-b-lg">Stage 1 – Healthy</p>
+            </div>
+            
+            <div class="w-full aspect-square rounded-lg bg-cover bg-center flex items-end" style="background-image: url('/images/ProjMap/projmap-sq1.png');">
+                <p class="text-sm text-light w-full p-4 rounded-b-lg">Stage 2 – Half corrupted</p>
+            </div>
+            
+            <div class="w-full aspect-square rounded-lg bg-cover bg-center flex items-end" style="background-image: url('/images/ProjMap/projmap-sq1.png');">
+                <p class="text-sm text-light w-full p-4 rounded-b-lg">Stage 3 – Fully corrupted</p>
+            </div>
+            
+            <div class="relative">
+                <video id="fast-video" class="w-full aspect-square object-cover rounded-lg" autoplay loop muted playsinline>
+                    <source src="/videos/projmap7.mp4" type="video/mp4" />
+                    <source src="/videos/projmap7.webm" type="video/webm" />
+                </video>
+                <p class="absolute bottom-0 text-sm text-light w-full p-4 rounded-b-lg">Full transitions</p>
+
+                <script>
+                    const video = document.getElementById('fast-video') as HTMLVideoElement;
+                    if (video) video.playbackRate = 2;
+                </script>
+            </div>
+
+        </div> -->
+
+        <p class="text-heading mb-4">The process:</p>
         <div class="grid grid-cols-2 gap-4 mb-24">
         <img class="object-cover rounded-lg" src="/images/ProjMap/projmap12.png">
         <img class="object-cover rounded-lg" src="/images/ProjMap/projmap13.png">

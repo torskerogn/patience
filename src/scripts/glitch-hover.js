@@ -13,7 +13,7 @@ const flickerColors = [
   '#2622F7',
 ];
 
-const defaultFont = "'Montserrat', sans-serif";
+const defaultFont = "'Archivo'";
 const DELAY = 300;
 const DURATION = 500;
 const SPEED = 40;

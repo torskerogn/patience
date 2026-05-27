@@ -22,7 +22,7 @@ if (DEV && !SHOULD_SKIP) {
   document.getElementById('intro-heading')?.classList.add('hidden');
   document.getElementById('spine-canvas')?.style.setProperty('opacity', '1');
   const sh = document.getElementById('scroll-hint');
-  if (sh) { sh.style.opacity = '1'; sh.textContent = 'scroll down to explore...'; }
+  if (sh) { sh.style.opacity = '1'; sh.textContent = 'scroll down to explore projects...'; }
   const sc = document.getElementById('scroll-container');
   if (sc) { sc.classList.remove('overflow-hidden'); sc.classList.add('overflow-y-scroll'); }
   positionHint();
@@ -35,7 +35,7 @@ const flickerFonts = [
   '"Major Mono Display", monospace',
   '"Instrument Serif", serif',
 ];
-const defaultFont = "'Montserrat', sans-serif";
+const defaultFont = "'Archivo'";
 
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -107,7 +107,7 @@ function skipIntro() {
   if (spine) spine.style.opacity = '1';
   if (scrollHint) {
     scrollHint.style.opacity = '1';
-    scrollHint.textContent = 'scroll down to explore...';
+    scrollHint.textContent = 'scroll down to explore projects...';
     positionHint();
   }
   if (scrollContainer) {
